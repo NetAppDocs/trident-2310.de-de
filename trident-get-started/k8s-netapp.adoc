@@ -59,7 +59,7 @@ NetApp HCI wird vollständig von Trident unterstützt. Trident kann Storage-Ger�
 
 == Azure NetApp Dateien
 
-https://azure.microsoft.com/en-us/services/netapp/["Azure NetApp Dateien"^] Ist ein Azure-Dateifreigabeservice der Enterprise-Klasse auf der Basis von NetApp. Sie können anspruchsvollste dateibasierte Workloads nativ in Azure ausführen. So erhalten Sie die Performance und das umfassende Datenmanagement, die Sie von NetApp gewohnt sind.
+https://azure.microsoft.com/en-us/products/netapp/["Azure NetApp Dateien"^] ist ein Azure-Dateifreigabedienst der Enterprise-Klasse, der von NetApp betrieben wird. Sie können Ihre anspruchsvollsten dateibasierten Workloads nativ in Azure ausführen, mit der Leistung und dem umfassenden Datenmanagement, das Sie von NetApp erwarten.
 
 
 
