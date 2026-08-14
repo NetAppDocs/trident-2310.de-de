@@ -16,6 +16,7 @@ Erfahren Sie, wie Sie mit Backend-Management-Operationen durchführen `kubectl`.
 
 
 
+[[delete-a-backend]]
 == Löschen Sie ein Back-End
 
 Durch Löschen von A `TridentBackendConfig`, Sie weisen Astra Trident an, Back-Ends zu löschen/zu behalten (basierend auf `deletionPolicy`). Um ein Backend zu löschen, stellen Sie sicher, dass `deletionPolicy` Ist auf Löschen festgelegt. Um nur die zu löschen `TridentBackendConfig`, Stellen Sie das sicher `deletionPolicy` Auf beibehalten eingestellt. Dadurch wird sichergestellt, dass das Backend weiterhin vorhanden ist und mit verwaltet werden kann `tridentctl`.
@@ -30,6 +31,7 @@ Astra Trident löscht nicht die Kubernetes Secrets, die von verwendet wurden `Tr
 
 
 
+[[view-the-existing-backends]]
 == Zeigen Sie die vorhandenen Back-Ends an
 
 Führen Sie den folgenden Befehl aus:
@@ -42,6 +44,7 @@ Sie können auch ausführen `tridentctl get backend -n trident` Oder `tridentctl
 
 
 
+[[update-a-backend]]
 == Aktualisieren Sie ein Backend
 
 Es gibt mehrere Gründe für die Aktualisierung eines Backend:

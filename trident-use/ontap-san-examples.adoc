@@ -16,6 +16,7 @@ Erfahren Sie, wie Sie ONTAP SAN Treiber für Ihre Astra Trident Installation ers
 
 
 
+[[backend-configuration-options]]
 == Back-End-Konfigurationsoptionen
 
 Die Back-End-Konfigurationsoptionen finden Sie in der folgenden Tabelle:
@@ -129,6 +130,7 @@ Verwenden Sie diese Funktion nur, wenn Sie eine Fehlerbehebung durchführen und 
 |===
 
 
+[[backend-configuration-options-for-provisioning-volumes]]
 == Back-End-Konfigurationsoptionen für die Bereitstellung von Volumes
 
 Sie können die Standardbereitstellung mit diesen Optionen im steuern `defaults` Abschnitt der Konfiguration. Ein Beispiel finden Sie unten in den Konfigurationsbeispielen.
@@ -180,6 +182,7 @@ LUKS-Verschlüsselung wird für NVMe/TCP nicht unterstützt. | „“
 |===
 
 
+[[volume-provisioning-examples]]
 === Beispiele für die Volume-Bereitstellung
 
 Hier ein Beispiel mit definierten Standardwerten:
@@ -225,6 +228,7 @@ Die Größenanpassung ist derzeit die einzige Möglichkeit, die neue Berechnung 
 
 
 
+[[minimal-configuration-examples]]
 == Minimale Konfigurationsbeispiele
 
 Die folgenden Beispiele zeigen grundlegende Konfigurationen, bei denen die meisten Parameter standardmäßig belassen werden. Dies ist der einfachste Weg, ein Backend zu definieren.
@@ -367,6 +371,7 @@ useREST: true
 ====
 
 
+[[examples-of-backends-with-virtual-pools]]
 == Beispiele für Back-Ends mit virtuellen Pools
 
 In diesen Beispiel-Back-End-Definitionsdateien werden spezifische Standardwerte für alle Speicherpools festgelegt, z. B. `spaceReserve` Bei keiner, `spaceAllocation` Bei false, und `encryption` Bei false. Die virtuellen Pools werden im Abschnitt Speicher definiert.
@@ -508,6 +513,7 @@ storage:
 ====
 
 
+[[map-backends-to-storageclasses]]
 == Back-Ends StorageClasses zuordnen
 
 Die folgenden StorageClass-Definitionen finden Sie im <<Beispiele für Back-Ends mit virtuellen Pools>>. Verwenden der `parameters.selector` Jede StorageClass ruft auf, welche virtuellen Pools zum Hosten eines Volumes verwendet werden können. Auf dem Volume werden die Aspekte im ausgewählten virtuellen Pool definiert.

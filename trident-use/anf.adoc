@@ -16,6 +16,7 @@ Sie können Azure NetApp Files als Backend für Astra Trident konfigurieren. Sie
 
 
 
+[[azure-netapp-files-driver-details]]
 == Azure NetApp Files-Treiberdetails
 
 Astra Trident bietet die folgenden Azure NetApp Files Storage-Treiber für die Kommunikation mit dem Cluster. Unterstützte Zugriffsmodi sind: _ReadWriteOnce_ (RWO), _ReadOnly Many_ (ROX), _ReadWriteMany_ (RWX), _ReadWriteOncePod_ (RWOP).
@@ -38,6 +39,7 @@ RWO, ROX, RWX, RWOP
 |===
 
 
+[[considerations]]
 === Überlegungen
 
 * Der Azure NetApp Files-Service unterstützt keine Volumes mit einer Größe von weniger als 100 GB. Astra Trident erstellt automatisch 100-gib-Volumes, wenn ein kleineres Volume angefordert wird.
@@ -46,6 +48,7 @@ RWO, ROX, RWX, RWOP
 
 
 
+[[managed-identities-for-aks]]
 == Verwaltete Identitäten für AKS
 
 Astra Trident unterstützt link:https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview["Verwaltete Identitäten"^] Für Cluster von Azure Kubernetes Services. Um die Vorteile einer optimierten Verwaltung von Anmeldeinformationen zu nutzen, die von verwalteten Identitäten angeboten wird, müssen Sie über Folgendes verfügen:

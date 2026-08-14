@@ -16,6 +16,7 @@ Virtuelle Pools stellen eine Abstraktionsschicht zwischen Astra Trident Storage-
 
 
 
+[[learn-about-virtual-pools]]
 == Erfahren Sie mehr über virtuelle Pools
 
 Der Storage-Administrator kann virtuelle Pools auf einem beliebigen Astra Trident Back-End in einer JSON- oder YAML-Definitionsdatei definieren.

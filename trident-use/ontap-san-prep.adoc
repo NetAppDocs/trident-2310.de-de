@@ -16,6 +16,7 @@ Verstehen Sie die Anforderungen und Authentifizierungsoptionen für die Konfigur
 
 
 
+[[requirements]]
 == Anforderungen
 
 Für alle ONTAP Back-Ends benötigt Astra Trident mindestens ein Aggregat, das der SVM zugewiesen ist.
@@ -26,6 +27,7 @@ Alle Kubernetes-Worker-Nodes müssen über die entsprechenden iSCSI-Tools verfü
 
 
 
+[[authenticate-the-ontap-backend]]
 == Authentifizieren Sie das ONTAP-Backend
 
 Astra Trident bietet zwei Arten der Authentifizierung eines ONTAP-Backend.
@@ -41,6 +43,7 @@ WARNING: Wenn Sie versuchen, *sowohl Anmeldeinformationen als auch Zertifikate* 
 
 
 
+[[enable-credential-based-authentication]]
 === Aktivieren Sie die Anmeldeinformationsbasierte Authentifizierung
 
 Astra Trident erfordert die Zugangsdaten für einen Administrator mit SVM-Umfang/Cluster-Umfang, um mit dem Backend von ONTAP zu kommunizieren. Es wird empfohlen, die Standard-vordefinierten Rollen wie zu verwenden `admin` Oder `vsadmin`. So ist gewährleistet, dass die Kompatibilität mit künftigen ONTAP Versionen gewährleistet ist, die FunktionsAPIs der künftigen Astra Trident Versionen bereitstellen können. Eine benutzerdefinierte Sicherheits-Login-Rolle kann mit Astra Trident erstellt und verwendet werden, wird aber nicht empfohlen.
@@ -84,6 +87,7 @@ Beachten Sie, dass die Backend-Definition der einzige Ort ist, an dem die Anmeld
 
 
 
+[[enable-certificate-based-authentication]]
 === Aktivieren Sie die zertifikatbasierte Authentifizierung
 
 Neue und vorhandene Back-Ends können ein Zertifikat verwenden und mit dem ONTAP-Back-End kommunizieren. In der Backend-Definition sind drei Parameter erforderlich.
@@ -168,6 +172,7 @@ tridentctl create backend -f cert-backend.json -n trident
 
 
 
+[[update-authentication-methods-or-rotate-credentials]]
 === Aktualisieren Sie Authentifizierungsmethoden, oder drehen Sie die Anmeldedaten
 
 Sie können ein vorhandenes Backend aktualisieren, um eine andere Authentifizierungsmethode zu verwenden oder ihre Anmeldedaten zu drehen. Das funktioniert auf beide Arten: Back-Ends, die einen Benutzernamen/ein Passwort verwenden, können aktualisiert werden, um Zertifikate zu verwenden; Back-Ends, die Zertifikate verwenden, können auf Benutzername/Passwort-basiert aktualisiert werden. Dazu müssen Sie die vorhandene Authentifizierungsmethode entfernen und die neue Authentifizierungsmethode hinzufügen. Verwenden Sie dann die aktualisierte Backend.json-Datei, die die erforderlichen Parameter enthält `tridentctl backend update`.
@@ -201,6 +206,7 @@ Durch die Aktualisierung eines Backend wird der Zugriff auf Volumes, die bereits
 
 
 
+[[authenticate-connections-with-bidirectional-chap]]
 == Verbindungen mit bidirektionalem CHAP authentifizieren
 
 Astra Trident kann iSCSI-Sitzungen mit bidirektionalem CHAP für die authentifizieren `ontap-san` Und `ontap-san-economy` Treiber. Hierfür muss die Aktivierung von erforderlich sein `useCHAP` Option in der Back-End-Definition. Wenn eingestellt auf `true`, Astra Trident konfiguriert die Standard-Initiator-Sicherheit der SVM auf bidirektionales CHAP und setzt den Benutzernamen und die Geheimnisse aus der Backend-Datei. NetApp empfiehlt die Verwendung von bidirektionalem CHAP zur Authentifizierung von Verbindungen. Die folgende Beispielkonfiguration ist verfügbar:
@@ -228,6 +234,7 @@ Zusätzlich zu `useCHAP=true`, Das `chapInitiatorSecret`, `chapTargetInitiatorSe
 
 
 
+[[how-it-works]]
 === So funktioniert es
 
 Nach Einstellung `useCHAP` Der Storage-Administrator weist Astra Trident an, CHAP im Storage-Back-End zu konfigurieren. Dazu gehört Folgendes:
@@ -245,6 +252,7 @@ Nach der Erstellung des Backend erstellt Astra Trident eine entsprechende `tride
 
 
 
+[[rotate-credentials-and-update-backends]]
 === Anmeldedaten rotieren und Back-Ends aktualisieren
 
 Sie können die CHAP-Anmeldeinformationen aktualisieren, indem Sie die CHAP-Parameter im aktualisieren `backend.json` Datei: Dazu müssen die CHAP-Schlüssel aktualisiert und der verwendet werden `tridentctl update` Befehl zum Übergeben dieser Änderungen.

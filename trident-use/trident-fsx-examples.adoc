@@ -16,6 +16,7 @@ Erfahren Sie mehr über Back-End-Konfigurationsoptionen für Amazon FSX für ONT
 
 
 
+[[backend-configuration-options]]
 == Back-End-Konfigurationsoptionen
 
 Die Back-End-Konfigurationsoptionen finden Sie in der folgenden Tabelle:
@@ -136,6 +137,7 @@ Diese Funktion erfordert ONTAP 9.11.1 und höher. Darüber hinaus muss die verwe
 |===
 
 
+[[update-datalif-after-initial-configuration]]
 === Aktualisierung `dataLIF` Nach der Erstkonfiguration
 
 Sie können die Daten-LIF nach der Erstkonfiguration ändern, indem Sie den folgenden Befehl ausführen, um die neue Backend-JSON-Datei mit aktualisierten Daten-LIF bereitzustellen.
@@ -149,6 +151,7 @@ NOTE: Wenn PVCs an einen oder mehrere Pods angeschlossen sind, müssen Sie alle 
 
 
 
+[[backend-configuration-options-for-provisioning-volumes]]
 == Back-End-Konfigurationsoptionen für die Bereitstellung von Volumes
 
 Sie können die Standardbereitstellung mit diesen Optionen im steuern `defaults` Abschnitt der Konfiguration. Ein Beispiel finden Sie unten in den Konfigurationsbeispielen.
@@ -192,9 +195,7 @@ Wenn NAE auf dem Backend aktiviert ist, wird jedes im Astra Trident bereitgestel
 Weitere Informationen finden Sie unter: link:../trident-reco/security-reco.html["Astra Trident arbeitet mit NVE und NAE zusammen"]. | `false` 
 
 
-| `luksEncryption` | Aktivieren Sie die LUKS-Verschlüsselung. Siehe link:../trident-reco/security-reco.html#Use-Linux-Unified-Key-Setup-(LUKS)["Linux Unified Key Setup (LUKS) verwenden"].
-
-Nur SAN | „“ 
+| `luksEncryption` | LUKS-Verschlüsselung aktivieren. Siehe link:../trident-reco/security-luks.html["Linux Unified Key Setup (LUKS) verwenden"]. Nur SAN. | „“ 
 
 
 | `tieringPolicy` | Tiering-Richtlinie für die Nutzung	`none` | `snapshot-only` Für Konfiguration vor ONTAP 9.5 SVM-DR 
@@ -215,6 +216,7 @@ Der SMB-Standardwert ist `ntfs`.
 |===
 
 
+[[example]]
 == Beispiel
 
 Wird Verwendet `nasType`, `node-stage-secret-name`, und `node-stage-secret-namespace`, Sie können ein SMB-Volume angeben und die erforderlichen Active Directory-Anmeldeinformationen angeben. SMB Volumes werden mit unterstützt `ontap-nas` Nur Treiber.

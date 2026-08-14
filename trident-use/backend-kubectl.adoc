@@ -16,6 +16,7 @@ Ein Backend definiert die Beziehung zwischen Astra Trident und einem Storage-Sys
 
 
 
+[[tridentbackendconfig]]
 == `TridentBackendConfig`
 
 `TridentBackendConfig` (`tbc`, `tbconfig`, `tbackendconfig`) Ist ein Front-End, Namensvetter CRD, mit dem Sie Astra Trident Back-Ends mit verwalten können `kubectl`. Kubernetes- und Storage-Administratoren können Back-Ends jetzt direkt über die Kubernetes-CLI erstellen und managen, ohne dass ein dediziertes Dienstprogramm für die Befehlszeilenschnittstelle erforderlich ist (`tridentctl`).
@@ -72,6 +73,7 @@ TIP: Back-Ends, die mit erstellt wurden `tridentctl` Ist nicht zugeordnet `Tride
 
 
 
+[[steps-overview]]
 == Schritte im Überblick
 
 Um ein neues Backend mit zu erstellen `kubectl`, Sie sollten Folgendes tun:
@@ -84,6 +86,7 @@ Nachdem Sie ein Backend erstellt haben, können Sie den Status mit beobachten `k
 
 
 
+[[step-1-create-a-kubernetes-secret]]
 == Schritt: Ein Kubernetes Secret erstellen
 
 Erstellen Sie einen geheimen Schlüssel, der die Anmeldedaten für den Zugriff für das Backend enthält. Dies ist nur bei jedem Storage Service/jeder Plattform möglich. Hier ein Beispiel:
@@ -187,6 +190,7 @@ Auf das in diesem Schritt erstellte Geheimnis wird im verwiesen `spec.credential
 
 
 
+[[step-2-create-the-tridentbackendconfig-cr]]
 == Schritt 2: Erstellen Sie die `TridentBackendConfig` CR
 
 Sie sind jetzt bereit, Ihre zu erstellen `TridentBackendConfig` CR. In diesem Beispiel wird ein Backend verwendet, das den verwendet `ontap-san` Treiber wird mithilfe des erstellt `TridentBackendConfig` Unten gezeigte Objekte:
@@ -213,6 +217,7 @@ spec:
 ----
 
 
+[[step-3-verify-the-status-of-the-tridentbackendconfig-cr]]
 == Schritt 3: Überprüfen Sie den Status des `TridentBackendConfig` CR
 
 Nun, da Sie die erstellt haben `TridentBackendConfig` CR, Sie können den Status überprüfen. Das folgende Beispiel zeigt:
@@ -243,6 +248,7 @@ In dieser Phase wird erfolgreich ein Backend erstellt! Es gibt mehrere Operation
 
 
 
+[[optional-step-4-get-more-details]]
 == (Optional) Schritt 4: Weitere Informationen
 
 Sie können den folgenden Befehl ausführen, um weitere Informationen über Ihr Backend zu erhalten:

@@ -16,6 +16,7 @@ https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["Amazon
 
 
 
+[[overview]]
 == Überblick
 
 Ein Dateisystem ist die primäre Ressource in Amazon FSX, analog zu einem ONTAP-Cluster vor Ort. Innerhalb jeder SVM können Sie ein oder mehrere Volumes erstellen, bei denen es sich um Daten-Container handelt, die die Dateien und Ordner im Filesystem speichern. Amazon FSX für NetApp ONTAP wird Data ONTAP als gemanagtes Dateisystem in der Cloud zur Verfügung stellen. Der neue Dateisystemtyp heißt *NetApp ONTAP*.
@@ -26,6 +27,7 @@ Amazon FSX für NetApp ONTAP https://docs.netapp.com/ontap-9/topic/com.netapp.do
 
 
 
+[[considerations]]
 == Überlegungen
 
 * SMB Volumes:
@@ -47,6 +49,7 @@ image:screenshot-fsx-backup-disable.png["Ein Screenshot der AWS Konsole mit dem 
 
 
 
+[[fsx-for-ontap-driver-details]]
 == FSX für ONTAP-Treiber Details
 
 Sie können Astra Trident mithilfe der folgenden Treiber in Amazon FSX für NetApp ONTAP integrieren:
@@ -62,6 +65,7 @@ Informationen zu den Fahrern finden Sie unter link:../trident-use/ontap-nas.html
 
 
 
+[[authentication]]
 == Authentifizierung
 
 Astra Trident bietet zwei Authentifizierungsmodi.
@@ -84,6 +88,7 @@ Weitere Informationen zur Aktivierung der Authentifizierung finden Sie in der Au
 
 
 
+[[find-more-information]]
 == Weitere Informationen
 
 * https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["Dokumentation zu Amazon FSX für NetApp ONTAP"^]
